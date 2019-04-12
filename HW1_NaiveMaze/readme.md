@@ -68,7 +68,7 @@ public class MenuController: MonoBehaviour
 
 ### 5、外部三维模型的载入
 
-​	我使用MagicaVoxel，参照视频https://www.bilibili.com/video/av11489871构建了一个三维模型，并导出为obj文件，然后将其放到项目目录下。同样的将其拖入到场景中，便能够显示出来了。不过这里出现了一个问题：unity给出的模型的中心并不在它的中心上。这样，无论是碰撞检测还是控制移动都会出现问题。于是我建立了一个名为Player的Empty的GameObject，并将模型作为其一个子类，将模型的中心对准Player的中心，以后的碰撞检测之类的操作都在Player上进行，问题就解决了。
+​	我使用MagicaVoxel，参照视频https://www.bilibili.com/video/av11489871 构建了一个三维模型，并导出为obj文件，然后将其放到项目目录下。同样的将其拖入到场景中，便能够显示出来了。不过这里出现了一个问题：unity给出的模型的中心并不在它的中心上。这样，无论是碰撞检测还是控制移动都会出现问题。于是我建立了一个名为Player的Empty的GameObject，并将模型作为其一个子类，将模型的中心对准Player的中心，以后的碰撞检测之类的操作都在Player上进行，问题就解决了。
 
 ​	然后我为Player建立了一个Box Collider，并调整大小至正好包住模型；然后将其设置为刚体，外部三维模型的导入便完成了。
 
