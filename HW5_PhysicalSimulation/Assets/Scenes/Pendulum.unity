@@ -593,6 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3153eada54bed26458c8a0d76b7ebe0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  g: 9.8
   EulerSphere: {fileID: 1212956528}
   MidpointSphere: {fileID: 1823274358}
   TrapzoidSphere: {fileID: 1356223395}
