@@ -935,12 +935,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1494580196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1933c40447971b44b675a38a6921688, type: 3}
+  m_Script: {fileID: 11500000, guid: e3990cb65b0e7e24784b143989210783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2143249672}
   hairSet: []
-  hairSize: 100
+  hairSize: 200
 --- !u!4 &1494580198
 Transform:
   m_ObjectHideFlags: 0
@@ -949,7 +949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494580196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.951191, y: 0.54915977, z: -0.8391974}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

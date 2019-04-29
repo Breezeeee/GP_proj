@@ -21,6 +21,6 @@ public class HairGenerate : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 }

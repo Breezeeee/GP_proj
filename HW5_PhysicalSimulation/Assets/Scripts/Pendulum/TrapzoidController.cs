@@ -5,38 +5,40 @@ using UnityEngine;
 public class TrapzoidController : MonoBehaviour
 {
     public float g = 9.8f;
-    public float mass = 0.01f;
     private float l;
     private float theta;
-    private float omega;
+    [System.NonSerialized] public float omega;
+    private float transAngle;
 
     private Transform Top;
     private Transform Sphere;
 
     void Start()
     {
-        Top = GameObject.FindGameObjectWithTag("TrapzoidTop").GetComponent<Transform>();
+        Top = GameObject.FindGameObjectWithTag("Top").GetComponent<Transform>();
         Sphere = this.GetComponent<Transform>();
 
         l = Vector3.Distance(Top.position, Sphere.position);
         theta = Vector3.Angle(Sphere.position - Top.position, new Vector3(0, -1, 0));
         omega = 0.0f;
+        transAngle = 0.0f;
     }
 
     void Update()
     {
-        Sphere.RotateAround(Top.position, new Vector3(0, 0, -1), omega);
+        Sphere.RotateAround(Top.position, new Vector3(0, 0, -1), transAngle);
         theta = Vector3.Angle(Sphere.position - Top.position, new Vector3(0, -1, 0));
-        float deltaOmega = g / l * Mathf.Sin(Mathf.Deg2Rad * theta) * mass;
-        float tmpOmega;
+
+        float deltaOmega = g / l * Mathf.Sin(Mathf.Deg2Rad * theta) * Time.deltaTime;
+        float tmpOmega = omega;
         if (Top.position.x > Sphere.position.x)
         {
-            tmpOmega = omega - deltaOmega;
+            omega = omega - deltaOmega;
         }
         else
         {
-            tmpOmega = omega + deltaOmega;
+            omega = omega + deltaOmega;
         }
-        omega = (tmpOmega + omega) / 2;
+        transAngle = (tmpOmega + omega) / 2;
     }
 }
